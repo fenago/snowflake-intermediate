@@ -130,6 +130,13 @@ encryption = (type = 'SNOWFLAKE_SSE');
     Note that we have to specify a server-side encryption on the internal stage. When using the default client-side encryption, the files will be returned encrypted and not readable when accessed through URLs (in Section 6).
 </aside>
 
+### Download the SnowSQL Installer 
+
+SnowSQL can be downloaded and installed on Linux, Windows, or Mac. Download the SnowSQL Installer for Windows from here:
+
+`https://sfc-repo.snowflakecomputing.com/snowsql/bootstrap/1.2/windows_x86_64/snowsql-1.2.21-windows_x86_64.msi`
+
+
 #### Download Data and Scripts
 We need to first download the following files to the local workstation by clicking on the hyperlinks below. The subsequent steps require [SnowSQL CLI] installed on the local workstation where the lab is ran:
 
@@ -142,6 +149,8 @@ Once downloaded, untar the contents of the files on your local workstation and n
 cd /Users/znh/Downloads/quickstart/
 tar xzvf mailbox.tar.gz
 ```
+
+**Note:** Update the path according to your workstation.
 
 #### Upload Files using SnowSQL
 Before opening terminal, find out your account identifier which for the trial account will be `<account-locator>.<region-id>.<cloud>`. These fields can be retrieved from the URL of your Snowflake account.
