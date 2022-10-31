@@ -1,4 +1,5 @@
 # Snowflake for Data Lake
+
 <!-- ------------------------ -->
 ## Overview 
 
@@ -537,8 +538,3 @@ Congratulations, you have completed this Quickstart for a quick overview of capa
 - How to use __Schema Detection__ to automatically determine and return the schema of staged files
 - How to improve performance of queries over external object stores with __Materialized Views__ over External Tables
 - Process and analyze __unstructured data__ with __Snowpark__
-
-### Related Resources
-- [Quickstart: Getting Started with Snowpark](https://quickstarts.snowflake.com/guide/getting_started_with_snowpark/index.html?index=..%2F..index)
-- [Quickstart: Getting Started with Time Travel](https://quickstarts.snowflake.com/guide/getting_started_with_time_travel/index.html?index=..%2F..index#0)
-- [Quickstart: Process PII data using Snowflake RBAC, DAC, Row Access Policies, and Column Level Security](https://quickstarts.snowflake.com/guide/getting_started_with_pii/index.html?index=..%2F..index#0)

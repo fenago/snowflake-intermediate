@@ -677,15 +677,3 @@ Congratulations, you have completed this Lab!
 - Snowpark can be used to build new types of user-defined functions and stored procedures
 - Managed and Monitored your Snowflake Tasks and Data Pipelines
 
-
-### Related Resources
-- [Streams]
-- [Tasks]
-- [Execute Tasks]
-- [Handling Task Errors]
-- [Snowpipe]
-- [Kafka Connector]
-
-
-
-

@@ -1,13 +1,5 @@
 # Resource Optimization: Usage Monitoring
 
-<!-- -------------->
-
-## Overview
-This resource optimization guide represents one module of the four contained in the series. These guides are meant to help customers better monitor and manage their credit consumption. Helping our customers build confidence that their credits are being used efficiently is key to an ongoing successful partnership. In addition to this set of Snowflake Quickstarts for Resource Optimization, Snowflake also offers community support as well as Training and Professional Services offerings. To learn more about the paid offerings, take a look at upcoming [education and training](https://www.snowflake.com/education-and-training/). 
-
-This [blog post](https://www.snowflake.com/blog/understanding-snowflakes-resource-optimization-capabilities/) can provide you with a better understanding of Snowflake's Resource Optimization capabilities.
-
-Contact our team at [marketing@snowflake.com](mailto:marketing@snowflake.com), we appreciate your feedback. 
 
 ### Usage Monitoring
 Usage Monitoring queries are designed to identify the warehouses, queries, tools, and users that are responsible for consuming the most credits over a specified period of time.  These queries can be used to determine which of those resources are consuming more credits than anticipated and take the necessary steps to reduce their consumption.
@@ -21,10 +13,6 @@ Usage Monitoring queries are designed to identify the warehouses, queries, tools
 - A [Snowflake](https://www.snowflake.com/) Account 
 - Access to view [Account Usage Data Share]
 
-### Related Materials
-- Resource Optimization: Setup & Configuration
-- Resource Optimization: Billing Metrics
-- Resource Optimization: Performance
 
 ## Query Tiers
 Each query within the Resource Optimization Snowflake Quickstarts will have a tier designation just to the right of its name as "(T*)".  The following tier descriptions should help to better understand those designations.

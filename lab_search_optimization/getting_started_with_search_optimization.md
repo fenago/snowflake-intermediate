@@ -248,7 +248,6 @@ SELECT *
 | **Percentage of partitions scanned** | 100%                       |6.41%                     |***99.59% less partitions*** scanned     |
 | **Bytes scanned**                    |10.60GB                       |4.09GB                  |***61.42% less data*** scanned           |
 
-Want to learn more? You can refer to our external documentations for benefitting from Search Optimization for queries with [Equality Predicates] and [Wildcards]
 
 ---
 
@@ -288,8 +287,6 @@ The above query returns ***2 rows out of 96.9 million rows***.
 | **Percentage of partitions scanned** | 100%                       |0.09%                     |***99.91% less partitions*** scanned     |
 | **Bytes scanned**                    |83.38GB                       |94.35MB                   |***99.80% less data*** scanned           |
 
-Want to learn more? You can refer to our external documentations for [benefitting from Search Optimization for queries on Variant Data]
-
 ----
 
 ## Accelerating Joins
@@ -325,7 +322,6 @@ SELECT *
 | **Percentage of partitions scanned** | 99.92%                       |0.22%                     |***99.70% less partitions*** scanned     |
 | **Bytes scanned**                    |62.64GB                       |99.30MB                   |***99.84% less data*** scanned           |
 
-Want to learn more? You can refer to our external documentations for [benefitting from Search Optimization for JOIN queries]
 
 ----
 
