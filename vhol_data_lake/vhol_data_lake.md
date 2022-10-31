@@ -1,7 +1,7 @@
 # Snowflake for Data Lake
 <!-- ------------------------ -->
 ## Overview 
-Duration: 1
+
 
 This Quickstart is intended to help you use a sample of features available in Snowflake for your cloud data lake. This lab does not require that you have an existing data lake. All data will be provided in a publicly available cloud storage location. The datasets used in this Quickstart contain trip data in Apache Parquet format from the Citibike transportation company in New York. To show Snowflake’s support for unstructured data, we’ll also use research papers (PDF) from the 2020 Conference on Neural Information Processing Systems.
 
@@ -9,7 +9,7 @@ This Quickstart is intended to help you use a sample of features available in Sn
 - Use of the [Snowflake free 30-day trial](https://trial.snowflake.com)
 - Basic knowledge of SQL, database concepts, and objects
 - Familiarity with JSON and Apache Parquet semi-structured data
-- Recommended to first complete [Getting Started with Snowflake - Zero to Snowflake](https://quickstarts.snowflake.com/guide/getting_started_with_snowflake/index.html?index=..%2F..index#0)
+
 
 ### What You’ll Learn 
 - How to query partitioned semi-structured data stored in files in external cloud object storage with __External Tables__
@@ -25,7 +25,7 @@ This Quickstart is intended to help you use a sample of features available in Sn
 
 <!-- ------------------------ -->
 ## Prepare Your Lab Environment
-Duration: 8
+
 
 If you haven't already, register for a [Snowflake free 30-day trial](https://trial.snowflake.com). The cloud provider (AWS, Azure, Google Cloud), and Region (US East, EU, e.g.) do _not_ matter for this lab. However, we suggest you select the region which is physically closest to you. Select the __Enterprise__ edition so you can use some advanced capabilities that are not available in the Standard edition. After registering, you will receive an email with an activation link and your Snowflake account URL. Bookmark this URL for easy, future access. After activation, you will create a username and password. Write down these credentials.
 
@@ -183,7 +183,7 @@ select * from STATIONS_VW limit 100;
 
 <!-- ------------------------ -->
 ## External Tables
-Duration: 2
+
 
 With Snowflake, you have options for various storage patterns. You can load semi-structured and unstructured data directly into Snowflake for the best security, performance, and automatic management, or you can read data from external object storage. Say you already have data in cloud object storage, you can start processing and querying this data from Snowflake in minutes. 
 
@@ -357,18 +357,18 @@ order by 3 desc;
 Although not covered hands-on in this Quickstart because they require access to a cloud console, there are two important optional parameters to note for External Tables.
 
 #### REFRESH_ON_CREATE = { TRUE | FALSE }
-`TRUE` by default, this parameter specifies whether to automatically refresh the external table metadata once, immediately after the external table is created. The metadata for an external table is the list of files that exist in the specified storage location. Setting this option to FALSE essentially creates an “empty” external table definition. To refresh the metadata requires execution of the command `ALTER EXTERNAL TABLE refresh;`
+`TRUE` by default, this parameter specifies whether to automatically refresh the external table metadata once, immediately after the external table is created. The metadata for an external table is the list of files that exist in the specified storage location. Setting this option to FALSE essentially creates an "empty" external table definition. To refresh the metadata requires execution of the command `ALTER EXTERNAL TABLE refresh;`
 
 #### AUTO_REFRESH = { TRUE | FALSE }
 Also `TRUE` by default, this parameter specifies whether Snowflake should enable triggering automatic refreshes of the external table metadata when new or updated data files are available in the named external stage specified. Setting this option to `TRUE` will keep external tables in sync with the contents of the related storage location.
 
 <!-- ------------------------ -->
 ## Materialized Views over External Tables
-Duration: 2
+
 
 External Tables offer the ability to have a SQL interface on top of object storage, without having to maintain an additional copy of the data in the Snowflake storage layer. Automatic refresh can keep the external metadata in sync with the contents of the storage location, eliminating many complex data engineering workflows. Defining the external table with an effective partitioning scheme can greatly improve query performance against external tables.
 
-[Materialized Views](https://docs.snowflake.com/en/user-guide/views-materialized.html) are pre-computed data sets derived from a query specification (the SELECT in the view definition) and stored for later use. Because the data is pre-computed, querying a materialized view is faster than executing the original query.
+[Materialized Views] are pre-computed data sets derived from a query specification (the SELECT in the view definition) and stored for later use. Because the data is pre-computed, querying a materialized view is faster than executing the original query.
 
 Combining these two techniques, i.e., creating a Materialized View over an External Table, provides better query performance, with the benefit of maintaining the original data source in external storage.
 
@@ -426,7 +426,7 @@ In the Results panel, view the Query Profile. Notice how much faster this was th
 
 <!-- ------------------------ -->
 ## Unstructured Data
-Duration: 15
+
 
 So far you’ve seen how easy it is to query semi-structured data in Snowflake. Snowflake also supports unstructured data, which allows you to store and access files, natively process files using Snowpark, process files by calling out to external services using External Functions, and use Snowflake’s role-based access controls to govern unstructured data.
 
@@ -528,7 +528,7 @@ limit 5;
 
 <!-- ------------------------ -->
 ## Conclusion
-Duration: 2
+
 
 Congratulations, you have completed this Quickstart for a quick overview of capabilities Snowflake for data lakes.
 

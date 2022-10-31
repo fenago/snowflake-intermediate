@@ -4,11 +4,11 @@
 
 ## Overview
 
-Duration: 2
+
 
 Deepnote brings Python and SQL into a collaborative data science notebook, along with a suite 
 of low-code tools and tight integration with Snowflake. Altogether, Deepnote 
-and Snowflake reduce the “time to insight” for teams as they explore their data.
+and Snowflake reduce the "time to insight" for teams as they explore their data.
 
 ![img](assets/structure.png)
 
@@ -34,7 +34,7 @@ interactive data visualization.
 
 - A free [Deepnote account](https://deepnote.com/home)
 - A [Snowflake account](https://signup.snowflake.com/) with admin access
-- The [weather dataset](https://drive.google.com/file/d/127iMXdC3ZYdfrlqAFLm2pPORZ6tGj_wM/view?usp=sharing) uploaded to your Snowflake database (uploading instructions [here](https://docs.snowflake.com/en/user-guide/script-data-load-transform-parquet.html))
+- The [weather dataset](https://drive.google.com/file/d/127iMXdC3ZYdfrlqAFLm2pPORZ6tGj_wM/view?usp=sharing) uploaded to your Snowflake database (uploading instructions [here]
 
 ### What You’ll Build
 
@@ -47,7 +47,7 @@ to solve the hardest data analysis problems.
 
 ## Setup a Snowflake integration inside Deepnote
 
-Duration: 1
+
 
 To connect a Snowflake database to a Deepnote project, open the 
 Snowflake integration modal and supply the associated Snowflake 
@@ -67,7 +67,7 @@ tables with SQL blocks (described below).
 
 ## Query Snowflake with Deepnote's SQL blocks
 
-Duration: 3
+
 
 Similar to Python code cells used in Jupyter notebooks, Deepnote also includes 
 native SQL cells which include syntax highlighting and autocomplete 
@@ -90,7 +90,7 @@ other tool in the Python library ecosystem to further explore the data.
 
 ## Mix-and-match Python and SQL
 
-Duration: 3
+
 
 SQL queries in Deepnote also support the JinjaSQL templating language. 
 This allows users to pass Python variables **directly into SQL queries** as well as 
@@ -113,7 +113,7 @@ repeat similar blocks of code, over and over again.
 
 ## Visualize the results of a query 
 
-Duration: 4
+
 
 Deepnote provides no-code data visualization tools for streamlining EDA. 
 Given the results of the query above, let’s build a data visualization to 
@@ -122,7 +122,7 @@ choose a chart block type). We should expect temperature to get warmer in
 the summer months and colder in the winter months.
 
 Let’s choose `df` as the DataFrame to visualize by selecting it from 
-the dropdown at the top of the Chart block. Select “point chart” and 
+the dropdown at the top of the Chart block. Select "point chart" and 
 specify how you would like to map columns of your data to the X/Y 
 coordinates on the chart. Since we want to see temperature as a 
 function of time, let’s select `date` for the X axis and `temp` 
@@ -157,7 +157,7 @@ stopping us from using Altair, Plotly, or any other Python visualization library
 
 ## Build a UI around the SQL query
 
-Duration: 4
+
 
 Data exploration is iterative. Put another way—data exploration is repetitive. 
 While analysts strive to follow the DRY principle (do not repeat yourself), 
@@ -194,7 +194,7 @@ we can again use a chart block to visualize it further
 
 ## Conclusion
 
-Duration: 1
+
 
 With Deepnote and Snowflake you get the best in class for secure data 
 governance and rapid exploratory programming, together in the same place. 

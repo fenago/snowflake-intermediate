@@ -20,7 +20,7 @@ A basic knowledge of how to run and monitor queries in the Snowflake Web UI.
 - What the performance impact of enabling Search Optimization on different queries is
 
 ### What You'll Need
-- A supported [browser](https://docs.snowflake.com/en/user-guide/setup.html)
+- A supported [browser]
 - A Snowflake account with the Enterprise Edition 
   - Sign-up using [Snowflake Trial](https://signup.snowflake.com/) 
   ***OR***
@@ -248,7 +248,7 @@ SELECT *
 | **Percentage of partitions scanned** | 100%                       |6.41%                     |***99.59% less partitions*** scanned     |
 | **Bytes scanned**                    |10.60GB                       |4.09GB                  |***61.42% less data*** scanned           |
 
-Want to learn more? You can refer to our external documentations for benefitting from Search Optimization for queries with [ Equality Predicates](https://docs.snowflake.com/en/user-guide/search-optimization-service.html#equality-or-in-predicates) and [Wildcards](https://docs.snowflake.com/en/user-guide/search-optimization-service.html#substrings-and-regular-expressions)
+Want to learn more? You can refer to our external documentations for benefitting from Search Optimization for queries with [Equality Predicates] and [Wildcards]
 
 ---
 
@@ -288,7 +288,7 @@ The above query returns ***2 rows out of 96.9 million rows***.
 | **Percentage of partitions scanned** | 100%                       |0.09%                     |***99.91% less partitions*** scanned     |
 | **Bytes scanned**                    |83.38GB                       |94.35MB                   |***99.80% less data*** scanned           |
 
-Want to learn more? You can refer to our external documentations for [benefitting from Search Optimization for queries on Variant Data](https://docs.snowflake.com/en/user-guide/search-optismization-service.html#fields-in-variant-columns)
+Want to learn more? You can refer to our external documentations for [benefitting from Search Optimization for queries on Variant Data]
 
 ----
 
@@ -325,7 +325,7 @@ SELECT *
 | **Percentage of partitions scanned** | 99.92%                       |0.22%                     |***99.70% less partitions*** scanned     |
 | **Bytes scanned**                    |62.64GB                       |99.30MB                   |***99.84% less data*** scanned           |
 
-Want to learn more? You can refer to our external documentations for [benefitting from Search Optimization for JOIN queries](https://docs.snowflake.com/en/user-guide/search-optimization-service.html#enabling-the-search-optimization-service-to-improve-the-performance-of-joins)
+Want to learn more? You can refer to our external documentations for [benefitting from Search Optimization for JOIN queries]
 
 ----
 

@@ -64,7 +64,7 @@ You will process data with Snowpark, develop a simple ML model and create a Pyth
 6. Install Streamlit by running `pip install streamlit` or `pip3 install streamlit`
 7. Install scikit-learn by running `pip install -U scikit-learn`
 8. Install Snowpark for Python by running `conda install snowflake-snowpark-python` 
-9. Create folder, e.g. “Summit HOL PCE” and download/save the Lab files in that folder.
+9. Create folder, e.g. "Summit HOL PCE" and download/save the Lab files in that folder.
     1. Link to required files: https://drive.google.com/drive/folders/1CN6Ljj59XWv2B3Epqxk4DtfDmCH1co_Q?usp=sharing
 
 
@@ -119,7 +119,7 @@ Before we begin to review working with Marketplace data sets, verify you have in
 
 Now that we have created a database with the Economy Data Atlas, we need to create a database for our application that will store the User Defined Function.
 
-Select “Worksheets” from the Home menu of Snowflake. Create a new worksheet by selecting the 
+Select "Worksheets" from the Home menu of Snowflake. Create a new worksheet by selecting the 
 
 
 ![alt_text](assets/Picture8.png)
@@ -207,9 +207,7 @@ from sklearn.linear_model import LinearRegression
 
 ### Connect to Snowflake
 
-In this step, you'll create a [Session object](https://docs.snowflake.com/en/LIMITEDACCESS/snowpark-python.html#creating-a-session) to connect to your Snowflake. Here's a quick way of doing that, but note that hard coding credentials directly in code is not recommended in production environments. In production environments a better approach would be to load credentials from [AWS Secrets Manager](https://github.com/iamontheinet/sf-code-snippets/blob/main/aws_secrets_manager_sf_connection.py) or [Azure Key Vault](https://github.com/iamontheinet/sf-code-snippets/blob/main/azure_key_vault_sf_connection.py), for example.
-
-We will be using the database that we created in the Snowflake setup section.
+In this step, you'll create a [Session object] to connect to your Snowflake. We will be using the database that we created in the Snowflake setup section.
 
 
 ``` python
@@ -377,7 +375,7 @@ st.set_page_config(
 
 ### Connect to Snowflake
 
-In this step, you'll create a [Session object](https://docs.snowflake.com/en/LIMITEDACCESS/snowpark-python.html#creating-a-session) to connect to your Snowflake. Here's a quick way of doing that, but note that hard coding credentials directly in code is not recommended in production environments. In production environments a better approach would be to load credentials from [AWS Secrets Manager](https://github.com/iamontheinet/sf-code-snippets/blob/main/aws_secrets_manager_sf_connection.py) or [Azure Key Vault](https://github.com/iamontheinet/sf-code-snippets/blob/main/azure_key_vault_sf_connection.py), for example.
+In this step, you'll create a [Session object], for example.
 
 We will be using the database that we created in the Snowflake setup section.
 
@@ -555,9 +553,9 @@ In the application:
 
 
 
-1. You can click on expansion sections indicated with a “+”
+1. You can click on expansion sections indicated with a "+"
 2. You can select a year to show detailed information
-3. The quarterly PCE values are collapsed by default, you can expand them by clicking the “+”
+3. The quarterly PCE values are collapsed by default, you can expand them by clicking the "+"
 
 
 ![alt_text](assets/Picture6.png)

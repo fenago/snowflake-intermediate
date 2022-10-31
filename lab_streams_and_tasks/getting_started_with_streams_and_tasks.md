@@ -1,7 +1,7 @@
 # Getting Started with Streams & Tasks
 <!-- ------------------------ -->
 ## Overview 
-Duration: 4
+
 
 This guide will take you through a scenario of using Snowflake's Tasks and Streams capabilities to ingest a stream of data and prepare for analytics.  
 
@@ -41,7 +41,7 @@ To participate in the virtual hands-on lab, attendees need the following:
 
 <!-- ------------------------ -->
 ## Setting up Snowflake
-Duration: 5
+
 
 ### Download
 The first thing you will need to do is download the following .sql file that contains a series of SQL commands we will execute throughout this lab. **Click the green button to download the file**
@@ -74,7 +74,7 @@ Finally, switch to the ACCOUNTADMIN role.  If you just created an evaluation acc
 
 <!-- ------------------------ -->
 ## Begin Construction
-Duration: 5
+
 
 Create Foundational Snowflake Objects for this Hands-on Lab
 ### a)  Create a new role for this Lab and grant permissions
@@ -117,7 +117,7 @@ create or replace table CC_TRANS_STAGING (RECORD_CONTENT variant);
 ```
 
 ## Simulated Stream Source
-Duration: 1
+
 
 Create Simulation Data Generation Stored Procedure (Using Snowpark Java).  We kept this as a separate step, as it is necessary for setup, but deep interrogation of how this Stored Procedure works to use Snowflake as a streaming ingestion process is not the focus of this Lab.
 Just copy, paste and run this to create the Stored Procedure:
@@ -221,7 +221,7 @@ Which will return:
 
 
 ## Develop and Testing
-Duration: 15
+
 
 ### a)  Call SP to generate the compressed JSON load file
 Later, this will be setup to run repetitively on a schedule to simulate a real-time stream ingestion process.  First, we run the stored procedure on-demand using:  
@@ -323,7 +323,7 @@ type varchar,
 timestamp datetime);
 ```
 ## Create Data Pipeline #1
-Duration: 15
+
 
 Create Tasks to orchestrate Processing for this Hands-on Lab.  Each Task will be independent and separately scheduled.
 
@@ -517,7 +517,7 @@ select count(*) from CC_TRANS_ALL;
 ```
 
 ## Create Data Pipeline #2
-Duration: 15
+
 
 This section's Data Pipeline will be very similar to the first, except will orchestrate tasks with dependencies, rather than being independently scheduled and executed.
 
@@ -631,7 +631,7 @@ alter task WAIT_TASK SUSPEND;
 
 
 ## Final Steps & Cleanup
-Duration: 2
+
 ### a)  See how many transactions we have processed
 ```
 select count(*) from CC_TRANS_ALL;
@@ -666,7 +666,7 @@ drop role VHOL;
 ```
 
 ## Conclusion
-Duration: 3
+
 
 Congratulations, you have completed this Lab!  
 
@@ -679,12 +679,12 @@ Congratulations, you have completed this Lab!
 
 
 ### Related Resources
-- [Streams](https://docs.snowflake.com/en/user-guide/streams-intro.html)
-- [Tasks](https://docs.snowflake.com/en/user-guide/tasks-intro.html)
-- [Execute Tasks](https://docs.snowflake.com/en/sql-reference/sql/execute-task.html)
-- [Handling Task Errors](https://docs.snowflake.com/en/user-guide/tasks-errors.html)
-- [Snowpipe](https://docs.snowflake.com/en/user-guide/data-load-snowpipe.html)
-- [Kafka Connector](https://docs.snowflake.com/en/user-guide/kafka-connector.html)
+- [Streams]
+- [Tasks]
+- [Execute Tasks]
+- [Handling Task Errors]
+- [Snowpipe]
+- [Kafka Connector]
 
 
 

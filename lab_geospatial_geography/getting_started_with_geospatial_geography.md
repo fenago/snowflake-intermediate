@@ -1,7 +1,7 @@
 # Getting Started with Geospatial - Geography
 <!-- ------------------------ -->
 ## Overview 
-Duration: 10
+
 
 Geospatial query capabilities in Snowflake are built upon a combination of data types and specialized query functions that can be used to parse, construct, and run calculations over geospatial objects. This guide will introduce you to the `GEOGRAPHY` data type, help you understand geospatial formats supported by Snowflake, and walk you through the use of a variety of functions on a sample geospatial data set from the Snowflake Marketplace.  
 
@@ -18,7 +18,7 @@ Geospatial query capabilities in Snowflake are built upon a combination of data 
 - how to perform geospatial joins
 
 ### What You’ll Need 
-- A supported Snowflake [Browser](https://docs.snowflake.com/en/user-guide/setup.html)
+- A supported Snowflake [Browser]
 - Sign-up for a [Snowflake Trial](https://signup.snowflake.com/)
   - OR, have access to an existing Snowflake account with the `ACCOUNTADMIN` role or the `IMPORT SHARE` privilege
 - Access to the [geojson.io](https://geojson.io) or [WKT Playground](https://clydedacruz.github.io/openstreetmap-wkt-playground/) website
@@ -31,7 +31,7 @@ Negative
 
 <!-- ------------------------ -->
 ## Acquire Marketplace Data
-Duration: 20
+
 
 The first step in the guide is to acquire a geospatial data set that you can freely use to explore the basics of Snowflake's geospatial functionality. The best place to acquire this data is the Snowflake Marketplace!
 
@@ -39,7 +39,7 @@ The first step in the guide is to acquire a geospatial data set that you can fre
 
 [app.snowflake.com](https://app.snowflake.com)
 
-If this is the first time you are logging into the new Preview Snowflake UI, you will be prompted to enter your account name or account URL that you were given when you acquired a trial. The account URL contains your [account name](https://docs.snowflake.com/en/user-guide/connecting.html#your-snowflake-account-name) and potentially the region.
+If this is the first time you are logging into the new Preview Snowflake UI, you will be prompted to enter your account name or account URL that you were given when you acquired a trial. The account URL contains your [account name] and potentially the region.
 
 Click `Sign-in` and you will be prompted for your user name and password.
 
@@ -92,7 +92,7 @@ Congratulations! You have just created a shared database from a listing on the S
 
 <!-- ------------------------ -->
 ## Understand Geospatial Formats
-Duration: 20
+
 
 The final step in the prior section opened a worksheet editor in the new Snowflake UI with a few pre-populated queries that came from the sample queries defined in the Marketplace listing. You are not going to run any of these queries in this guide, but you are welcome to run them later. Instead, you are going to open a new worksheet editor and run different queries to understand how the `GEOGRAPHY` data type works in Snowflake.
 
@@ -106,7 +106,7 @@ Now you are ready to run some queries.
 
 ### The GEOGRAPHY data type
 
-Snowflake's `GEOGRAPHY` data type is similar to the `GEOGRAPHY` data type in other geospatial databases in that it treats all points as longitude and latitude on a spherical earth instead of a flat plane. This is an important distinction from other geospatial types (such as `GEOMETRY`), but this guide won't be exploring those distinctions. More information about Snowflake's specification can be found [here](https://docs.snowflake.com/en/sql-reference/data-types-geospatial.html).
+Snowflake's `GEOGRAPHY` data type is similar to the `GEOGRAPHY` data type in other geospatial databases in that it treats all points as longitude and latitude on a spherical earth instead of a flat plane. This is an important distinction from other geospatial types (such as `GEOMETRY`), but this guide won't be exploring those distinctions. More information about Snowflake's specification can be found [here].
 
 Look at one of the views in the shared database which has a `GEOGRAPHY` column by running the following queries. Copy & paste the SQL below into your worksheet editor, put your cursor somewhere in the text of the query you want to run (usually the beginning or end), and either click the blue "Play" button in the upper right of your browser window, or press `CTRL+Enter` or `CMD+Enter` (Windows or Mac) to run the query.
 
@@ -115,14 +115,14 @@ Look at one of the views in the shared database which has a `GEOGRAPHY` column b
 use schema osm_newyork.new_york;
 ```
 
-The [use schema](https://docs.snowflake.com/en/sql-reference/sql/use-schema.html) command sets the active database.schema for your future queries so you do not have to fully qualify your objects.
+The [use schema] command sets the active database.schema for your future queries so you do not have to fully qualify your objects.
 
 ```
 // Describe the v_osm_ny_shop_electronics view 
 desc view v_osm_ny_shop_electronics;
 ```
 
-The [desc or describe](https://docs.snowflake.com/en/sql-reference/sql/desc.html) command shows you the definition of the view, including the columns, their data type, and other relevant details. Notice the `coordinates` column is defined of `GEOGRAPHY` type. This is the column you will focus on in the next steps.
+The [desc or describe] command shows you the definition of the view, including the columns, their data type, and other relevant details. Notice the `coordinates` column is defined of `GEOGRAPHY` type. This is the column you will focus on in the next steps.
 
 ### View GEOGRAPHY Output Formats
 
@@ -141,7 +141,7 @@ Run the query below to make sure the current format is GeoJSON.
 alter session set geography_output_format = 'GEOJSON';
 ```
 
-The [alter session](https://docs.snowflake.com/en/sql-reference/sql/alter-session.html) command lets you set a parameter for your current user session, which in this case is the `GEOGRAPHY_OUTPUT_FORMAT`. The default value for this parameter is `'GEOJSON'`, so normally you wouldn't have to run this command if you want that format, but this guide wants to be certain the next queries are run with the `'GEOJSON'` output.
+The [alter session] command lets you set a parameter for your current user session, which in this case is the `GEOGRAPHY_OUTPUT_FORMAT`. The default value for this parameter is `'GEOJSON'`, so normally you wouldn't have to run this command if you want that format, but this guide wants to be certain the next queries are run with the `'GEOJSON'` output.
 
 Now run the following query against the `V_OSM_NY_SHOP_ELECTRONICS` view.
 
@@ -183,7 +183,7 @@ select coordinates, name from v_osm_ny_shop_electronics where type = 'node' limi
 select coordinates, name from v_osm_ny_shop_electronics where type = 'way' limit 25;
 ```
 
-WKT looks different than GeoJSON, and is arguably more readable. Here you can more clearly see the [geospatial object types](https://docs.snowflake.com/en/sql-reference/data-types-geospatial.html#geospatial-object-types) which are represented below in the example output:
+WKT looks different than GeoJSON, and is arguably more readable. Here you can more clearly see the [geospatial object types] which are represented below in the example output:
 
 ```console
 // An example of a POINT
@@ -213,13 +213,13 @@ Notice how WKB is incomprehensible to a human reader. Other than the length of t
 
 <!-- ------------------------ -->
 ## Unload/Load Data
-Duration: 20
+
 
 Now that you understand the different output formats, you can create new files from the electronics view, then load those files into new tables with the `GEOGRAPHY` data type. You will also encounter your first examples of geospatial _parsers_ and _constructors_.
 
 ### Create New WKB Files From Queries
 
-In this step we're going to use Snowflake's [COPY into location](https://docs.snowflake.com/en/sql-reference/sql/copy-into-location.html) feature to take the output of a query and create a file in your local [user stage](https://docs.snowflake.com/en/user-guide/data-load-local-file-system-create-stage.html#user-stages). Because your output format is set to WKB, the geospatial column in that table will be represented in the WKB format in the new files.
+In this step we're going to use Snowflake's [COPY into location] feature to take the output of a query and create a file in your local [user stage]. Because your output format is set to WKB, the geospatial column in that table will be represented in the WKB format in the new files.
 
 Negative
 : The WKB format is being chosen here for its simplicity within a file. Since WKB is a single alpha-numeric string with no delimiters, spaces, or other difficult characters, it is excellent for storing geospatial data in a file. That doesn't mean other formats are to be avoided in real world use cases, but WKB will make your work easier in this guide.
@@ -260,7 +260,7 @@ In this query, the parsers `ST_X` and `ST_Y` are extracting the longitude and la
 
 ### LIST and Query User Staged Files
 
-You should now have 2 files in your user stage. Verify they are there by running the [list](https://docs.snowflake.com/en/sql-reference/sql/list.html) command. The 'osm' string will act as a filter to tell the command to show only the files beginning with 'osm'.
+You should now have 2 files in your user stage. Verify they are there by running the [list] command. The 'osm' string will act as a filter to tell the command to show only the files beginning with 'osm'.
 
 ```
 list @~/osm;
@@ -345,7 +345,7 @@ select * from electronics_points;
 
 <!-- ------------------------ -->
 ## Calculations and More Constructors
-Duration: 20
+
 
 Now that you have the basic understand of how the `GEOGRAPHY` data type works and what a geospatial representation of data looks like in various output formats, it's time to walkthrough a scenario that requires you to run some geospatial queries to answer some questions.
 
@@ -560,7 +560,7 @@ Now move to the next section to see how you can optimize your shopping trip.
 
 <!-- ------------------------ -->
 ## Joins
-Duration: 10
+
 
 In the previous section, all of your queries to find the closest Best Buy, liquor store, and coffee shop were based on proximity to your Times Square apartment. But wouldn't it make more sense to see, for example, if there was a liquor store and/or coffee shop closer to Best Buy? You can use geospatial functions in a table join to find out.
 
@@ -602,7 +602,7 @@ Negative
 : The id of the selected Best Buy was hard coded into the above queries to keep them easier to read and to keep you focused on the join clause of these queries, rather than introducing sub queries to dynamically calculate the nearest Best Buy. Those sub queries would have created longer queries that were harder to read.
 
 Positive
-: If you're feeling adventurous, go read about other possible relationship functions that could be used in the join for this scenario [here](https://docs.snowflake.com/en/sql-reference/functions-geospatial.html).
+: If you're feeling adventurous, go read about other possible relationship functions that could be used in the join for this scenario [here].
 
 ### Calculate a New Linestring
 
@@ -680,7 +680,7 @@ Nice! 1537 meters, which is a savings of about 583 meters, or a third of a mile.
 <!-- ------------------------ -->
 
 ## Additional Calculations and Constructors
-Duration: 15
+
 
 The `LINESTRING` object that was created in the previous section looks like a nice, clean, four-sided polygon. As it turns out, a `POLYGON` is another geospatial object type that you can construct and work with. Where you can think of a `LINESTRING` as a border of a shape, a `POLYGON` is the filled version of the shape itself. The key thing about a `POLYGON` is that it must end at its beginning, where a `LINESTRING` does not need to return to the starting point.
 
@@ -904,11 +904,11 @@ Positive
 <!-- ------------------------ -->
 
 ## Conclusion
-Duration: 5
+
 
 In this guide, you acquired geospatial data from the Snowflake Marketplace, explored how the `GEOGRAPHY` data type and its associated formats work, created data files with geospatial data in it, loaded those files into new tables with `GEOGRAPHY` typed columns, and queried geospatial data using parser, constructor, transformation and calculation functions on single tables and multiple tables with joins. You then saw how newly constructed geospatial objects could be visualized in tools like geojson.io or WKT Playground.
 
-You are now ready to explore the larger world of Snowflake [geospatial support](https://docs.snowflake.com/en/sql-reference/data-types-geospatial.html) and [geospatial functions](https://docs.snowflake.com/en/sql-reference/functions-geospatial.html).
+You are now ready to explore the larger world of Snowflake [geospatial support] and [geospatial functions].
 
 ### What we've covered
 - How to acquire a shared database from the Snowflake Marketplace

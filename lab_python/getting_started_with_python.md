@@ -1,7 +1,7 @@
 # Getting Started with Python
 <!-- ------------------------ -->
 ## Overview
-Duration: 1
+
 
 You can connect to Snowflake in many languages. If your language of choice is Python, you'll want to begin here to connect to Snowflake. We'll walk you through getting the Python Connector up and running, and then explore the basic operations you can do with it. You'll find the Python Connector to be quite robust, as it even supports integration with Pandas DataFrames.
 
@@ -29,7 +29,7 @@ You can connect to Snowflake in many languages. If your language of choice is Py
 
 <!-- ------------------------ -->
 ## Set up the Python Connector
-Duration: 5
+
 
 For this guide, we'll be using Python 3. Let's check what version of Python you have on your system. Do this by opening a terminal and entering the following command:
 
@@ -54,7 +54,7 @@ Once you have both Python and the Snowflake Connector installed, you're ready to
 <!-- ------------------------ -->
 
 ## Test Your Installation
-Duration: 3
+
 
 Before we delve into *using* the Snowflake connector, let's ensure it's installed correctly. We can do this with the following script.
 
@@ -90,7 +90,7 @@ If everything is good to go, you'll see the installed Snowflake version. Otherwi
 <!-- ------------------------ -->
 
 ## Connect to Snowflake
-Duration: 5
+
 
 It's time to use the Snowflake Connector for Python. Open up your Python environment. The first thing you'll need to do is to import the Snowflake Connector module. Do this before using any Snowflake related commands.
 
@@ -118,7 +118,7 @@ Nice! Now let’s delve into the specifics.
 <!-- ------------------------ -->
 
 ## Set Session Parameters
-Duration: 1
+
 
 You can set session parameters to tweak your session and have it set up just the way you want it. There are two ways to accomplish this. First, you can set them when you initially connect, like so:
 
@@ -141,16 +141,16 @@ conn.cursor().execute("ALTER SESSION SET QUERY_TAG = 'EndOfMonthFinancials'")
 
 You may have taken advantage of Snowflake's ability to use robust security methods. If so, you'll want to take extra steps to configure the Snowflake Python Connector.
 
-* [Single Sign-on (SSO)](https://docs.snowflake.com/en/user-guide/admin-security-fed-auth-use.html#label-sso-with-command-line-clients)
-* [Key Pair Authentication](https://docs.snowflake.com/en/user-guide/python-connector-example.html#using-key-pair-authentication)
-    - [Key Rotation](https://docs.snowflake.com/en/user-guide/python-connector-example.html#key-rotation)
-*  [OAuth](https://docs.snowflake.com/en/user-guide/oauth-intro.html#label-oauth-intro-clients-drivers-conns)
+* [Single Sign-on (SSO)]
+* [Key Pair Authentication]
+    - [Key Rotation]
+*  [OAuth]
 
 At this point, you can begin manipulating objects within Snowflake.
 
 <!-- ------------------------ -->
 ## Create a Warehouse
-Duration: 2
+
 
 If you're familiar with the SQL commands to interact with Snowflake, then the commands within the Python connector will be familiar as well. Let's break down what a command looks like.
 
@@ -160,7 +160,7 @@ Remember that `conn` is the object that connects you to your Snowflake account. 
 conn.cursor().execute("YOUR SQL COMMAND")
 ```
 
-We first want to create a [virtual warehouse](https://docs.snowflake.com/en/user-guide/warehouses-overview.html). Virtual warehouses contain the servers that are required for you to perform queries and DML operations with Snowflake. Creating one can be done by incorporating the `CREATE WAREHOUSE` SQL command.
+We first want to create a [virtual warehouse]. Virtual warehouses contain the servers that are required for you to perform queries and DML operations with Snowflake. Creating one can be done by incorporating the `CREATE WAREHOUSE` SQL command.
 
 ```
 conn.cursor().execute("CREATE WAREHOUSE IF NOT EXISTS tiny_warehouse_mg")
@@ -176,7 +176,7 @@ Now that you have a warehouse, let’s talk about databases.
 
 <!-- ------------------------ -->
 ## Create a Database
-Duration: 2
+
 
 The next step is to create a database. Databases contain your schemas, which contain your database objects. We can create one in a similar manner to creating a warehouse, but this time with the `CREATE DATABASE` command.
 
@@ -194,7 +194,7 @@ After that, you need to create a schema.
 <!-- ------------------------ -->
 
 ## Create a Schema
-Duration: 2
+
 
 Schemas are the grouping of your database objects. These include your tables, the data within them, and views. Schemas are found within databases. You can create a schema with the `CREATE SCHEMA` command.
 
@@ -218,7 +218,7 @@ With a schema in use, it’s time to move on to dealing with tables.
 <!-- ------------------------ -->
 
 ## Create a Table
-Duration: 2
+
 
 Alright, with a warehouse, database, and schema created you have everything you need to begin manipulating data in tables. First, you'll need to create the table. That's done with the `CREATE TABLE` command.
 
@@ -232,7 +232,7 @@ Within `conn.cursor().execute` this example creates a table named `test_table` w
 <!-- ------------------------ -->
 
 ## Insert Data
-Duration: 2
+
 
 With the table `test_table` created, you can add data to it. You can do so with the command `INSERT`.
 
@@ -242,7 +242,7 @@ conn.cursor().execute(
     "VALUES(123, 'test string1'),(456, 'test string2')")
 ```
 
-This command inserts data into `test_table` row by row. The value found in the first column and first row is “123” and so on.
+This command inserts data into `test_table` row by row. The value found in the first column and first row is "123" and so on.
 
 If you don't want to manually insert data row by row, however, you can load data instead. This is done with a combination of the `PUT` and `COPY INTO` commands.
 
@@ -255,7 +255,7 @@ The `PUT` command here is staging the file, and the `COPY INTO` command is copyi
 <!-- ------------------------ -->
 
 ## Query Data
-Duration: 2
+
 
 Of course, you'll want to query your data at some point. It's easy to do that within the Python Connector too. To view values from the table, you can do so easily with the `print` command.
 
@@ -283,12 +283,12 @@ Look at that! You have now implemented all the steps needed to manipulate data w
 <!-- ------------------------ -->
 
 ## Next Steps: Advanced Manipulation with Python
-Duration: 1
+
 
 By now you have a grasp on the basics of using the Python Connector. As you may have noticed, it leans heavily on already-established Snowflake SQL commands. Of course, this isn't all you can do with the Connector. Here are some potential next steps that may be of interest to you depending on your use case.
 
-* [Bind Data](https://docs.snowflake.com/en/user-guide/python-connector-example.html#binding-data)
-* [Use Pandas Dataframes](https://docs.snowflake.com/en/user-guide/python-connector-pandas.html)
-* [Snowflake SQLAlchemy Toolkit](https://docs.snowflake.com/en/user-guide/sqlalchemy.html)
+* [Bind Data]
+* [Use Pandas Dataframes]
+* [Snowflake SQLAlchemy Toolkit]
 
-This is just the surface of what you can do with Snowflake. To learn more, see the [Snowflake documentation](https://docs.snowflake.com/en/).
+This is just the surface of what you can do with Snowflake. To learn more, see the [Snowflake documentation].

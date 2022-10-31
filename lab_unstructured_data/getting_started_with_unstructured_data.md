@@ -1,7 +1,7 @@
 # Getting Started with Unstructured Data
 <!-- ------------------------ -->
 ## Overview 
-Duration: 1
+
 
 This Quickstart is designed to help you understand the capabilities included in Snowflake’s support for unstructured data. Sign up for a free 30-day trial of Snowflake and follow along with this lab exercise. After completing this lab, you’ll be ready to start storing and managing your own unstructured data in Snowflake. 
 
@@ -24,7 +24,7 @@ This Quickstart is designed to help you understand the capabilities included in 
 
 <!-- ------------------------ -->
 ## Notice and Terms of Use
-Duration: 1
+
 
 The data provided for this lab is an extract from the Enron email database made available by Carnegie Mellon University ([https://www.cs.cmu.edu/~enron/](https://www.cs.cmu.edu/~enron/)).
 
@@ -34,7 +34,7 @@ By accessing this data, you acknowledge and agree to the limits and terms relate
 
 <!-- ------------------------ -->
 ## Prepare your lab environment
-Duration: 2
+
 
 If you haven't already, register for a [Snowflake free 30-day trial](https://trial.snowflake.com/).
 The Snowflake edition (Standard, Enterprise, Business Critical, e.g.), cloud provider (AWS, Azure, e.g.), and Region (US East, EU, e.g.) do not matter for this lab. We suggest you select the region which is physically closest to you and the Enterprise Edition, our most popular offering. After registering, you will receive an email with an activation link and your Snowflake account URL.
@@ -51,11 +51,11 @@ For this lab, you will use the latest Snowflake web interface, Snowsight.
 
 <!-- ------------------------ -->
 ## Store & Access Unstructured Data
-Duration: 10
+
 
 Let’s start by preparing to load the unstructured data into Snowflake. Snowflake supports two types of stages for storing data files used for loading and unloading:
-- [Internal stages](https://docs.snowflake.com/en/user-guide/data-load-overview.html#internal-stages) store the files internally within Snowflake.
-- [External stages](https://docs.snowflake.com/en/user-guide/data-load-overview.html#external-stages) store the files in an external location (i.e. S3 bucket) that is referenced by the stage. An external stage specifies location and credential information, if required, for the bucket.
+- [Internal stages] store the files internally within Snowflake.
+- [External stages] store the files in an external location (i.e. S3 bucket) that is referenced by the stage. An external stage specifies location and credential information, if required, for the bucket.
 
 ### Create a Database, Schema, and Warehouse
 Before creating any stages, let’s create a database and a schema that will be used for loading the unstructured data. We will use the UI within the Worksheets tab to run the DDL that creates the database and schema. Copy the commands below into your trial environment, and execute each individually.
@@ -132,7 +132,7 @@ encryption = (type = 'SNOWFLAKE_SSE');
 </aside>
 
 #### Download Data and Scripts
-We need to first download the following files to the local workstation by clicking on the hyperlinks below. The subsequent steps require [SnowSQL CLI](https://docs.snowflake.com/en/user-guide/snowsql.html) installed on the local workstation where the lab is ran:
+We need to first download the following files to the local workstation by clicking on the hyperlinks below. The subsequent steps require [SnowSQL CLI] installed on the local workstation where the lab is ran:
 
 - [upload.snf](<https://sfquickstarts.s3.amazonaws.com/Getting Started Unstructured Data/Files/upload.snf>): SnowSQL Script which will upload the files to the internal stage just created.
 - [mailbox.tar.gz](<https://sfquickstarts.s3.amazonaws.com/Getting Started Unstructured Data/Files/mailbox.tar.gz>): The actual email data.
@@ -153,7 +153,7 @@ For example, the URL to access the trial account is `https://xx74264.ca-central-
 - Region ID: `ca-central-1`
 - Cloud: `aws`
 
-There may be additional segments if you are using your own account part of an organization. You can find those from the URL of your Snowflake account. Please check the [Snowflake Documentation](https://docs.snowflake.com/en/user-guide/admin-account-identifier.html#account-identifiers) for additional details on this topic.
+There may be additional segments if you are using your own account part of an organization. You can find those from the URL of your Snowflake account. Please check the [Snowflake Documentation] for additional details on this topic.
 
 Now open a terminal on your workstation and run the following SnowSQL command. You will be prompted for the password for the Snowflake user passed as a parameter.
 
@@ -191,7 +191,7 @@ You should now see an identical list of files uploaded to the internal stage. Ma
 
 <!-- ------------------------ -->
 ## Govern Unstructured Data Access
-Duration: 5
+
 
 Just like structured and semi-structured data, access permissions to unstructured data in Snowflake can be governed using role-based access control (RBAC).
 
@@ -233,7 +233,7 @@ In the subsequent sections, we will see a more fine-grained access control of th
 
 <!-- ------------------------ -->
 ## Catalog Unstructured Data using Directory Tables
-Duration: 6
+
 
 One of the main pain points in managing large repositories of unstructured data is the ability to access metadata easily on the numerous files, as well as retrieve files per some metadata attributes (last modified, file size, file patterns).
 
@@ -289,7 +289,7 @@ limit 5;
 ### Automatic Refresh
 Say you want the directory table to refresh whenever a file is added to your S3 bucket. This can be accomplished by using event notifications in S3. When a new file is added to a bucket, S3 will send a notification to Snowflake, and a Stream can refresh the directory table.
 
-In this quickstart, we won’t setup notifications in S3, but the command below is what you would use to create a stream on the directory table for a stage. More detailed documentation for automatically refreshing directory tables can be found [here](https://docs.snowflake.com/en/user-guide/data-load-dirtables-auto.html).
+In this quickstart, we won’t setup notifications in S3, but the command below is what you would use to create a stream on the directory table for a stage. More detailed documentation for automatically refreshing directory tables can be found [here].
 
 ```sql
 -- Create a table stream on directory table
@@ -298,16 +298,16 @@ create stream documents_stream on directory(<stage_name>);
 
 <!-- ------------------------ -->
 ## URLs for Secure Access
-Duration: 5
+
 
 In the previous sections, we have seen how to store unstructured data in Snowflake, as well as access metadata about the unstructured files, and build queries to retrieve files based on metadata filters. 
 
 In this section, we will look into how Snowflake offers access to the unstructured data through various types of URLs, as well as provide a more granular governance over unstructured data than at the stage level, as reviewed previously in Section 2.
 
 There are three different types of URLs that you can use to access unstructured data:
-- [__Scoped URL__](https://docs.snowflake.com/en/sql-reference/functions/build_scoped_file_url.html): A scoped file URL can be generated for a user to give the user short-lived, scoped access to the file without giving privileges on the stage.
-- [__File URL__](https://docs.snowflake.com/en/sql-reference/functions/build_stage_file_url.html): A file URL requires a user to be authenticated with Snowflake and requires the user to have read privileges on the stage.
-- [__Pre-signed URL__](https://docs.snowflake.com/en/sql-reference/functions/get_presigned_url.html): As the name suggests, pre-signed URLs are already authenticated. Users can simply download the files using pre-signed URLs.
+- [__Scoped URL__]: A scoped file URL can be generated for a user to give the user short-lived, scoped access to the file without giving privileges on the stage.
+- [__File URL__]: A file URL requires a user to be authenticated with Snowflake and requires the user to have read privileges on the stage.
+- [__Pre-signed URL__]: As the name suggests, pre-signed URLs are already authenticated. Users can simply download the files using pre-signed URLs.
 
 
 The URL format for files is https://<account>.snowflakecomputing.com/api/files/<db_name>/<schema_name>/<stage_name>/<file_path>. 
@@ -427,7 +427,7 @@ Open a new tab in your web browser, and paste the copied URL. This should downlo
 
 <!-- ------------------------ -->
 ## Perform Natural Language Processing
-Duration: 20
+
 
 We have so far reviewed how to store unstructured data files, retrieve them, provide granular access to the files through various URLs and through secure views. In this section, we want to extract additional attributes from the files.
 
@@ -747,7 +747,7 @@ As you can see, we can perform aggregations, and analytics on unstructured text 
 
 <!-- ------------------------ -->
 ## Share Unstructured Data
-Duration: 15
+
 
 In this example, we want to share all the email corpus mentioning 'Willman' with another party using a Snowflake reader account.
 
@@ -892,7 +892,7 @@ You have now completed this demonstration of how unstructured data can be secure
 
 <!-- ------------------------ -->
 ## Conclusion
-Duration: 1
+
 
 Congratulations! You used Snowflake to perform natural language processing on email files. 
 
@@ -904,8 +904,3 @@ Congratulations! You used Snowflake to perform natural language processing on em
 - Securely access unstructured data with __Scoped, File, and Pre-signed URLs__
 - Processing unstructured data with a __Java UDF__
 - Sharing unstructured data in the __Data Cloud__
-
-### Related Resources
-- [Unstructured Data Docs](https://docs.snowflake.com/en/user-guide/unstructured.html)
-- [Java UDF Docs](https://docs.snowflake.com/en/developer-guide/udf/java/udf-java.html)
-- [Snowpark Docs](https://docs.snowflake.com/en/developer-guide/snowpark/index.html)
